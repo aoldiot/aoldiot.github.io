@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Macos蓝牙/wifi睡眠及唤醒</title>
+      <link href="/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/"/>
+      <url>/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/</url>
+      
+        <content type="html"><![CDATA[<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><ul><li>sleepwatcher： 支持在Macbook休眠或唤醒时执行脚本</li><li>blueutil：命令行开关蓝牙工具</li></ul><h1 id="sleepwatcher-安装"><a href="#sleepwatcher-安装" class="headerlink" title="sleepwatcher 安装"></a>sleepwatcher 安装</h1><blockquote><p>安装sleepwatcher</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install sleepwatcher</span><br></pre></td></tr></table></figure><blockquote><p>注册启动<code>sleepwatcher</code></p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services start sleepwatcher</span><br></pre></td></tr></table></figure><h1 id="blueutil安装"><a href="#blueutil安装" class="headerlink" title="blueutil安装"></a>blueutil安装</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install blueutil</span><br></pre></td></tr></table></figure><h1 id="检查配置文件"><a href="#检查配置文件" class="headerlink" title="检查配置文件"></a>检查配置文件</h1><ul><li><p>执行 <code>ps -ef|grep sleepwatcher</code> 查看是否启动成功，如下是启动成功<br><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/16/17131741886901.jpg"></p></li><li><p>参数说明：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-s:  睡眠后运行脚本路径（默认是家目录下的.sleep）</span><br><span class="line">-w:  唤醒后运行脚本路径（默认是家目录下的.wakeup）</span><br></pre></td></tr></table></figure></li><li><p>检查是否存在<code>~/.sleep 文件</code>及 <code>~/.wakeup 文件</code> ,若不存在直接创建。</p></li><li><p>赋予<code>~/.sleep 文件</code>及 <code>~/.wakeup 文件</code> 可执行权限 </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x ~/.sleep</span><br><span class="line">chmod a+x ~/.wakeup</span><br></pre></td></tr></table></figure></li></ul><h1 id="sleep编写"><a href="#sleep编写" class="headerlink" title=".sleep编写"></a>.sleep编写</h1><blockquote><p>睡眠关闭蓝牙</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$(which blueutil) -p 0&quot; &gt;&gt; ~/.sleep</span><br></pre></td></tr></table></figure><blockquote><p>睡眠关闭wifi</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;networksetup -setairportpower en0 off&quot; &gt;&gt; ~/.sleep</span><br></pre></td></tr></table></figure><h1 id="wakeup编写"><a href="#wakeup编写" class="headerlink" title=".wakeup编写"></a>.wakeup编写</h1><blockquote><p>唤醒开启蓝牙</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$(which blueutil) -p 1&quot; &gt;&gt; ~/.wakeup</span><br></pre></td></tr></table></figure><blockquote><p>唤醒开启wifi</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;networksetup -setairportpower en0 on&quot; &gt;&gt; ~/.wakeup</span><br></pre></td></tr></table></figure><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ul><li>蓝牙唤醒很慢： 删除 <code>唤醒开启wifi</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> OPS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Macos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>24-04-1</title>
       <link href="/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/"/>
       <url>/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/</url>

@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>Macos蓝牙/wifi睡眠及唤醒 | Aoldiot</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.1"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/latest/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/grids-responsive-min.min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/latest/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/latest/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/latest/toastr.min.css"><div class="darkmode-toggle">🌓</div><script>var prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+var toggle = document.querySelector('.darkmode-toggle');
+var html = document.querySelector('html');
+
+html.dataset.dark = localStorage.dark || prefersDarkMode.matches;
+
+toggle.addEventListener('click', () => {
+localStorage.dark = !(html.dataset.dark == 'true');
+html.dataset.dark = localStorage.dark;
+});</script><meta name="generator" content="Hexo 7.1.1"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Macos蓝牙/wifi睡眠及唤醒</h1><a id="logo" href="/.">Aoldiot</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 主页</i></a><a href="/tags/"><i class="fa fa-tags"> 标签</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/categories/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/"><i class="fa fa-slideshare"> 杂乱无章</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-4-4"><div class="content_container"><div class="post"><h1 class="post-title">Macos蓝牙/wifi睡眠及唤醒</h1><div class="post-content"><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><ul>
+<li>sleepwatcher： 支持在Macbook休眠或唤醒时执行脚本</li>
+<li>blueutil：命令行开关蓝牙工具</li>
+</ul>
+<h1 id="sleepwatcher-安装"><a href="#sleepwatcher-安装" class="headerlink" title="sleepwatcher 安装"></a>sleepwatcher 安装</h1><blockquote>
+<p>安装sleepwatcher</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install sleepwatcher</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注册启动<code>sleepwatcher</code></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services start sleepwatcher</span><br></pre></td></tr></table></figure>
+
+<h1 id="blueutil安装"><a href="#blueutil安装" class="headerlink" title="blueutil安装"></a>blueutil安装</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install blueutil</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="检查配置文件"><a href="#检查配置文件" class="headerlink" title="检查配置文件"></a>检查配置文件</h1><ul>
+<li><p>执行 <code>ps -ef|grep sleepwatcher</code> 查看是否启动成功，如下是启动成功<br><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/16/17131741886901.jpg"></p>
+</li>
+<li><p>参数说明：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-s:  睡眠后运行脚本路径（默认是家目录下的.sleep）</span><br><span class="line">-w:  唤醒后运行脚本路径（默认是家目录下的.wakeup）</span><br></pre></td></tr></table></figure></li>
+<li><p>检查是否存在<code>~/.sleep 文件</code>及 <code>~/.wakeup 文件</code> ,若不存在直接创建。</p>
+</li>
+<li><p>赋予<code>~/.sleep 文件</code>及 <code>~/.wakeup 文件</code> 可执行权限 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x ~/.sleep</span><br><span class="line">chmod a+x ~/.wakeup</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="sleep编写"><a href="#sleep编写" class="headerlink" title=".sleep编写"></a>.sleep编写</h1><blockquote>
+<p>睡眠关闭蓝牙</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$(which blueutil) -p 0&quot; &gt;&gt; ~/.sleep</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>睡眠关闭wifi</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;networksetup -setairportpower en0 off&quot; &gt;&gt; ~/.sleep</span><br></pre></td></tr></table></figure>
+
+<h1 id="wakeup编写"><a href="#wakeup编写" class="headerlink" title=".wakeup编写"></a>.wakeup编写</h1><blockquote>
+<p>唤醒开启蓝牙</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;$(which blueutil) -p 1&quot; &gt;&gt; ~/.wakeup</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>唤醒开启wifi</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;networksetup -setairportpower en0 on&quot; &gt;&gt; ~/.wakeup</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ul>
+<li>蓝牙唤醒很慢： 删除 <code>唤醒开启wifi</code></li>
+</ul>
+</div></div></div></div><div class="pure-u-1 pure-u-md-4-4"><div id="footer">Copyright © 2024 <a href="/." rel="nofollow">Aoldiot.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.1" async></script><link rel="stylesheet" type="text/css" href="/css/search.css?v=1.0.1"><script type="text/javascript" src="/js/search.js?v=1.0.1"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+  search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/copycode.js?v=1.0.1" successtext="Copy Successed!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.1"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.1"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.1"></script></div></body></html>
