@@ -1,16 +1,588 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>Aoldiot</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.1"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/latest/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/grids-responsive-min.min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/latest/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/latest/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/latest/toastr.min.css"><div class="darkmode-toggle">🌓</div><script>var prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-var toggle = document.querySelector('.darkmode-toggle');
-var html = document.querySelector('html');
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Aoldiot</title><meta name="author" content="sky"><meta name="copyright" content="sky"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Aoldiot"><meta name="application-name" content="Aoldiot"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="Aoldiot"><meta property="og:url" content="http://example.com/index.html"><meta property="og:site_name" content="Aoldiot"><meta property="og:description"><meta property="og:locale" content="en"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="sky"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: sky","link":"Link: ","source":"Source: Aoldiot","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Aoldiot',
+  title: 'Aoldiot',
+  postAI: '',
+  pageFillDescription: '',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-04-25 18:30:13',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-html.dataset.dark = localStorage.dark || prefersDarkMode.matches;
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-toggle.addEventListener('click', () => {
-localStorage.dark = !(html.dataset.dark == 'true');
-html.dataset.dark = localStorage.dark;
-});</script><meta name="generator" content="Hexo 7.1.1"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Aoldiot</h1><a id="logo" href="/.">Aoldiot</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 主页</i></a><a href="/tags/"><i class="fa fa-tags"> 标签</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/categories/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/"><i class="fa fa-slideshare"> 杂乱无章</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/">Macos蓝牙/wifi睡眠及唤醒</a></h1><div class="post-meta">2024-04-15</div><div class="post-content">实现MacBook睡眠时关闭蓝牙/wifi，唤醒时开启蓝牙/wifi</div><p class="readmore"><a href="/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/">24-04-1</a></h1><div class="post-meta">2024-04-01</div><div class="post-content">Here's something encrypted, password is required to continue reading.</div><p class="readmore"><a href="/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/ops/SSH%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E7%BD%91/">SSH动态端口转发访问服务器内网</a></h1><div class="post-meta">2024-04-01</div><div class="post-content"><p>ssh端口转发，实现访问ssh服务器内网</p></div><p class="readmore"><a href="/2024/04/01/ops/SSH%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E7%BD%91/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/ops/ffmpeg%E5%B0%86%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/">ffmpeg 将本地视频推流</a></h1><div class="post-meta">2024-04-01</div><div class="post-content"><p>将视频文件使用ffmpeg进行循环推流</p></div><p class="readmore"><a href="/2024/04/01/ops/ffmpeg%E5%B0%86%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/ops/ios%E5%8F%8D%E7%BC%96%E8%AF%91%E5%8F%8A%E7%A0%B8%E5%A3%B3/">ios 砸壳</a></h1><div class="post-meta">2024-04-01</div><div class="post-content"><p>从Appstore直接下载的app是经过加壳的，需要”砸壳”</p></div><p class="readmore"><a href="/2024/04/01/ops/ios%E5%8F%8D%E7%BC%96%E8%AF%91%E5%8F%8A%E7%A0%B8%E5%A3%B3/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/ops/env%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">docker 环境变量</a></h1><div class="post-meta">2024-04-01</div><div class="post-content"><p>docker 环境变量</p></div><p class="readmore"><a href="/2024/04/01/ops/env%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/ops/%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/">多阶段构建打包项目</a></h1><div class="post-meta">2024-04-01</div><div class="post-content"><p>docker 多阶段构建打包项目</p></div><p class="readmore"><a href="/2024/04/01/ops/%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/ops/jumpserver/">jumpserver</a></h1><div class="post-meta">2024-04-01</div><div class="post-content"><p>jumpserver 堡垒机搭建</p></div><p class="readmore"><a href="/2024/04/01/ops/jumpserver/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/ops/supervisor%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">supervisor</a></h1><div class="post-meta">2024-04-01</div><div class="post-content"><p>进程管理工具</p></div><p class="readmore"><a href="/2024/04/01/ops/supervisor%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">Read More</a></p></div><div class="post"><h1 class="post-title"><a href="/2024/04/01/ops/windows%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E4%B8%BA%E6%9C%8D%E5%8A%A1/">windows程序注册为服务</a></h1><div class="post-meta">2024-04-01</div><div class="post-content"><p>将windows程序注册为服务进行管理</p></div><p class="readmore"><a href="/2024/04/01/ops/windows%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E4%B8%BA%E6%9C%8D%E5%8A%A1/">Read More</a></p></div><nav class="page-navigator"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a></nav></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/OPS/">OPS</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/">杂乱无章</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/ops/" style="font-size: 15px;">ops</a> <a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 15px;">逆向</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/" style="font-size: 15px;">杂乱无章</a> <a href="/tags/Macos/" style="font-size: 15px;">Macos</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/">Macos蓝牙/wifi睡眠及唤醒</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/">24-04-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/ops/SSH%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E7%BD%91/">SSH动态端口转发访问服务器内网</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/ops/ffmpeg%E5%B0%86%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/">ffmpeg 将本地视频推流</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/ops/ios%E5%8F%8D%E7%BC%96%E8%AF%91%E5%8F%8A%E7%A0%B8%E5%A3%B3/">ios 砸壳</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/ops/env%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">docker 环境变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/ops/%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/">多阶段构建打包项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/ops/jumpserver/">jumpserver</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/ops/supervisor%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">supervisor</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/01/ops/windows%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E4%B8%BA%E6%9C%8D%E5%8A%A1/">windows程序注册为服务</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2024 <a href="/." rel="nofollow">Aoldiot.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.1" async></script><link rel="stylesheet" type="text/css" href="/css/search.css?v=1.0.1"><script type="text/javascript" src="/js/search.js?v=1.0.1"></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-  search_path = 'search.xml';
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
 }
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script type="text/javascript" src="/js/copycode.js?v=1.0.1" successtext="Copy Successed!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.1"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.1"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.1"></script></div></body></html>
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">Aoldiot</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Macos/" style="font-size: 1.05rem;">Macos<sup>1</sup></a><a href="/tags/docker/" style="font-size: 1.05rem;">docker<sup>2</sup></a><a href="/tags/ops/" style="font-size: 1.05rem;">ops<sup>6</sup></a><a href="/tags/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/" style="font-size: 1.05rem;">杂乱无章<sup>1</sup></a><a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 1.05rem;">逆向<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">April 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div id="home_top"><div class="swiper_container_card" style="height: auto;width: 100%"><div id="bannerGroup"><div id="random-banner"><canvas id="peoplecanvas"></canvas><a id="random-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i><div class="bannerText">随便逛逛<i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div></a></div><div class="categoryGroup"><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-blue)"><a class="categoryButton blue" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"><span class="categoryButtonText">前端</span><i class="anzhiyufont anzhiyu-icon-dove"></i></a></div><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-red)"><a class="categoryButton red" href="/categories/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B6%AF/"><span class="categoryButtonText">大学</span><i class="anzhiyufont anzhiyu-icon-fire"></i></a></div><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-green)"><a class="categoryButton green" href="/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"><span class="categoryButtonText">生活</span><i class="anzhiyufont anzhiyu-icon-book"></i></a></div></div></div><div class="topGroup"><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2024/04/01/ops/env%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/&quot;)"><div class="post_cover left_radius"><a href="2024/04/01/ops/env环境变量/" title="docker 环境变量"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=aa5abb4d-ec36-12c1-009f-8523afd5613e"></a></div><div class="recent-post-info"><a class="article-title" href="2024/04/01/ops/env环境变量/" title="docker 环境变量">docker 环境变量</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2024/04/01/ops/ffmpeg%E5%B0%86%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/&quot;)"><div class="post_cover left_radius"><a href="2024/04/01/ops/ffmpeg将本地视频推流/" title="ffmpeg 将本地视频推流"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=c90b6b9f-43b9-9c3a-ecf0-5a5df4339a1b"></a></div><div class="recent-post-info"><a class="article-title" href="2024/04/01/ops/ffmpeg将本地视频推流/" title="ffmpeg 将本地视频推流">ffmpeg 将本地视频推流</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/&quot;)"><div class="post_cover left_radius"><a href="2024/04/15/ops/macos蓝牙、wifi睡眠及唤醒/" title="Macos蓝牙/wifi睡眠及唤醒"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=9cae5f5f-b5ba-7ae1-b3d4-a9e8190baf6a"></a></div><div class="recent-post-info"><a class="article-title" href="2024/04/15/ops/macos蓝牙、wifi睡眠及唤醒/" title="Macos蓝牙/wifi睡眠及唤醒">Macos蓝牙/wifi睡眠及唤醒</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2024/04/01/ops/SSH%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E7%BD%91/&quot;)"><div class="post_cover left_radius"><a href="2024/04/01/ops/SSH动态端口转发访问服务器内网/" title="SSH动态端口转发访问服务器内网"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=a1656907-a811-f6fe-e53b-5f2d9da91913"></a></div><div class="recent-post-info"><a class="article-title" href="2024/04/01/ops/SSH动态端口转发访问服务器内网/" title="SSH动态端口转发访问服务器内网">SSH动态端口转发访问服务器内网</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2024/04/01/ops/jumpserver/&quot;)"><div class="post_cover left_radius"><a href="2024/04/01/ops/jumpserver/" title="jumpserver"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=5f37c937-85dd-0d87-c143-a1d86444b88d"></a></div><div class="recent-post-info"><a class="article-title" href="2024/04/01/ops/jumpserver/" title="jumpserver">jumpserver</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/2024/04/01/ops/%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/&quot;)"><div class="post_cover left_radius"><a href="2024/04/01/ops/多阶段构建打包项目/" title="多阶段构建打包项目"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=7f0951c1-7d06-20e9-05f2-b350fb41ce75"></a></div><div class="recent-post-info"><a class="article-title" href="2024/04/01/ops/多阶段构建打包项目/" title="多阶段构建打包项目">多阶段构建打包项目</a></div></div><a class="todayCard" id="todayCard" target="_blank" rel="noopener" href="https://docs.anheyu.com/" style="z-index: 1;"><div class="todayCard-info"><div class="todayCard-tips">新品主题</div><div class="todayCard-title">Theme-AnZhiYu</div></div><img class="todayCard-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/05/13/645fa3cf90d70.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="封面"><div class="banner-button-group"><div class="banner-button" onclick="event.stopPropagation();event.preventDefault();anzhiyu.hideTodayCard();"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i><span class="banner-button-text">更多推荐</span></div></div></a></div><link rel="stylesheet"></div></div><div class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div id="categoryBar"><div class="category-bar" id="category-bar"><div id="catalog-bar"><div id="catalog-list"><div class="catalog-list-item" id="首页"><a href="/">首页</a></div>
+    <div class="catalog-list-item" id="/categories/OPS/">
+      <a href="/categories/OPS/">
+        OPS
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/杂乱无章/">
+      <a href="/categories/杂乱无章/">
+        杂乱无章
+      </a>
+    </div>
+    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/')"><div class="post_cover left"><a href="/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/" title="Macos蓝牙/wifi睡眠及唤醒" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=9cae5f5f-b5ba-7ae1-b3d4-a9e8190baf6a" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Macos蓝牙/wifi睡眠及唤醒" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><span class="newPost">最新</span><a class="unvisited-post" href="/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/" title="Macos蓝牙/wifi睡眠及唤醒">未读</a></div><a class="article-title" href="/2024/04/15/ops/macos%E8%93%9D%E7%89%99%E3%80%81wifi%E7%9D%A1%E7%9C%A0%E5%8F%8A%E5%94%A4%E9%86%92/" title="Macos蓝牙/wifi睡眠及唤醒">Macos蓝牙/wifi睡眠及唤醒</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-15T09:50:35.000Z" title="Created 2024-04-15 17:50:35" time="2024-04-15 17:50:35">2024-04-15</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-16T00:44:41.413Z" title="Updated 2024-04-16 08:44:41" time="2024-04-16 08:44:41">2024-04-16</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Macos/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Macos</span></a></span></div><div class="content">原理
+sleepwatcher： 支持在Macbook休眠或唤醒时执行脚本
+blueutil：命令行开关蓝牙工具
+
+sleepwatcher 安装
+安装sleepwatcher
+
+1brew install sleepwatcher
+
+
+注册启动sleepwatcher
+
+1brew services start sleepwatcher
+
+blueutil安装1brew install blueutil
+
+
+检查配置文件
+执行 ps -ef|grep sleepwatcher 查看是否启动成功，如下是启动成功
+
+参数说明：
+12-s:  睡眠后运行脚本路径（默认是家目录下的.sleep）-w:  唤醒后运行脚本路径（默认是家目录下的.wakeup）
+检查是否存在~/.sleep 文件及 ~/.wakeup 文件 ,若不存在直接创建。
+
+赋予~/.sleep 文件及 ~/.wakeup 文件 可执行权限 
+12chmod a+x ~/.sleepchmod a+x ~/.wakeup
+
+.sleep编写
+睡眠关闭蓝牙
+
+1echo &quot;$(which blueutil) -p  ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/')"><div class="post_cover left"><a href="/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/" title="24-04-1" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=940eebbc-cabb-512c-6c3e-8010744c5c0c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="24-04-1" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">杂乱无章</div><a class="unvisited-post" href="/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/" title="24-04-1">未读</a></div><a class="article-title" href="/2024/04/01/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/%E6%97%A5%E5%BF%97/" title="24-04-1">24-04-1</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T06:44:31.748Z" title="Created 2024-04-01 14:44:31" time="2024-04-01 14:44:31">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-16T00:46:15.417Z" title="Updated 2024-04-16 08:46:15" time="2024-04-16 08:46:15">2024-04-16</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>杂乱无章</span></a></span></div><div class="content">
+  4630436162ade97ba2718b7d0c4b3b63aa2ab1619d9cdbb4bb5fd57226dc61d2
+  
+    
+      
+      
+        Hey, password is required here.
+      
+    
+  
+
+</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/ops/env%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/')"><div class="post_cover left"><a href="/2024/04/01/ops/env%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="docker 环境变量" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=aa5abb4d-ec36-12c1-009f-8523afd5613e" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker 环境变量" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><a class="unvisited-post" href="/2024/04/01/ops/env%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="docker 环境变量">未读</a></div><a class="article-title" href="/2024/04/01/ops/env%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="docker 环境变量">docker 环境变量</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T02:52:35.000Z" title="Created 2024-04-01 10:52:35" time="2024-04-01 10:52:35">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-01T06:25:02.507Z" title="Updated 2024-04-01 14:25:02" time="2024-04-01 14:25:02">2024-04-01</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/docker/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>docker</span></a></span></div><div class="content">docker 环境变量
+
+
+方式一、创建.env  文件 （推荐）1key=value
+
+
+
+
+Dockerfile 使用环境变量
+
+12ARG key...
+
+
+
+
+Docker-compose 使用环境变量
+
+1MYSQL_DATABASE: $&#123;key&#125;
+
+
+
+方式二、在Dockerfile中设置环境变量1ENV &lt;KEY&gt; &lt;VALUE&gt;
+
+
+
+方式三、在docker-compose.yml中设置环境变量123environment:  MYSQL_DATABASE: &quot;my_database&quot;  MYSQL_PASSWORD: &quot;mysql&quot;
+
+
+
+参考：(11条消息) Dockerfile与docker-compose设置环境变量_一许流星的博客-CSDN博客_docker-compose 环境变量
+</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/ops/ffmpeg%E5%B0%86%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/')"><div class="post_cover left"><a href="/2024/04/01/ops/ffmpeg%E5%B0%86%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/" title="ffmpeg 将本地视频推流" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=c90b6b9f-43b9-9c3a-ecf0-5a5df4339a1b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ffmpeg 将本地视频推流" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><a class="unvisited-post" href="/2024/04/01/ops/ffmpeg%E5%B0%86%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/" title="ffmpeg 将本地视频推流">未读</a></div><a class="article-title" href="/2024/04/01/ops/ffmpeg%E5%B0%86%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/" title="ffmpeg 将本地视频推流">ffmpeg 将本地视频推流</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T02:52:35.000Z" title="Created 2024-04-01 10:52:35" time="2024-04-01 10:52:35">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-03T09:28:38.743Z" title="Updated 2024-04-03 17:28:38" time="2024-04-03 17:28:38">2024-04-03</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/ops/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>ops</span></a></span></div><div class="content">将视频文件使用ffmpeg进行循环推流
+
+
+1.安装ffmpeg
+推荐使用可执行文件配置方法
+
+官网下载： Download FFmpeg
+
+
+
+
+
+
+
+
+
+
+
+下载解压后根据实际情况配置环境变量即可，我是放到&#x2F;usr&#x2F;local下的
+
+1export PATH=$PATH:/usr/local/ffmpeg/bin
+
+
+
+2.将视频进行推流(1)推RTMP流：1ffmpeg -re -stream_loop -1 -i &quot;xxx.mp4&quot; -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 1280x720 -q 10 rtmp://xxx.xxx.xxxx.xxx:1935/live/a
+
+(2)推HLS流1ffmpeg -re -stream_loop -1 -i &quot;xxx.mp4&quot; -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -stri ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/ops/SSH%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E7%BD%91/')"><div class="post_cover left"><a href="/2024/04/01/ops/SSH%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E7%BD%91/" title="SSH动态端口转发访问服务器内网" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=a1656907-a811-f6fe-e53b-5f2d9da91913" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSH动态端口转发访问服务器内网" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><a class="unvisited-post" href="/2024/04/01/ops/SSH%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E7%BD%91/" title="SSH动态端口转发访问服务器内网">未读</a></div><a class="article-title" href="/2024/04/01/ops/SSH%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E7%BD%91/" title="SSH动态端口转发访问服务器内网">SSH动态端口转发访问服务器内网</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T02:52:35.000Z" title="Created 2024-04-01 10:52:35" time="2024-04-01 10:52:35">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-01T05:29:19.040Z" title="Updated 2024-04-01 13:29:19" time="2024-04-01 13:29:19">2024-04-01</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/ops/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>ops</span></a></span></div><div class="content">ssh端口转发，实现访问ssh服务器内网
+
+
+使用工具：
+SSH Tunnel	动态端口转发工具		SecureCRT 也可作为动态端口转发工具  
+Proxifier          socks5代理工具          socks5工具根据个人喜好选择即可，浏览器可以选择Switchy Omega扩展
+
+使用方法：1.通过SSH Tunnel添加服务器SSH信息
+
+2.设置动态端口转发，转发到本地某个端口，设置后开启连接
+
+3.使用Proxifier 配置socks5代理
+
+</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/ops/jumpserver/')"><div class="post_cover left"><a href="/2024/04/01/ops/jumpserver/" title="jumpserver" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=5f37c937-85dd-0d87-c143-a1d86444b88d" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jumpserver" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><a class="unvisited-post" href="/2024/04/01/ops/jumpserver/" title="jumpserver">未读</a></div><a class="article-title" href="/2024/04/01/ops/jumpserver/" title="jumpserver">jumpserver</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T02:52:35.000Z" title="Created 2024-04-01 10:52:35" time="2024-04-01 10:52:35">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-01T06:28:16.471Z" title="Updated 2024-04-01 14:28:16" time="2024-04-01 14:28:16">2024-04-01</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/ops/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>ops</span></a></span></div><div class="content">jumpserver 堡垒机搭建
+
+
+环境所在机器：192.168.0.209
+配置文件路径：&#x2F;opt&#x2F;jumpserver   （一般无需任何配置）
+安装管理
+docker安装
+
+1curl -sSL https://github.com/jumpserver/jumpserver/releases/download/v2.9.2/quick_start.sh | bash
+
+常用命令
+使用 jmsctl.sh脚本管理jumpserver，脚本位置/opt/jumpserver-installer-v2.7.1
+
+1234567891011121314151617Installation Commands:  install           安装 JumpServer  upgrade [version] 升级 JumpServer  check_update      Reconfiguration JumpServer  reconfig          Check for updates JumpServerManagement Commands:   ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/ops/%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/')"><div class="post_cover left"><a href="/2024/04/01/ops/%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/" title="多阶段构建打包项目" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=7f0951c1-7d06-20e9-05f2-b350fb41ce75" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多阶段构建打包项目" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><a class="unvisited-post" href="/2024/04/01/ops/%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/" title="多阶段构建打包项目">未读</a></div><a class="article-title" href="/2024/04/01/ops/%E5%A4%9A%E9%98%B6%E6%AE%B5%E6%9E%84%E5%BB%BA%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE/" title="多阶段构建打包项目">多阶段构建打包项目</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T02:52:35.000Z" title="Created 2024-04-01 10:52:35" time="2024-04-01 10:52:35">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-01T05:28:31.759Z" title="Updated 2024-04-01 13:28:31" time="2024-04-01 13:28:31">2024-04-01</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/docker/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>docker</span></a></span></div><div class="content">docker 多阶段构建打包项目
+
+
+整体思路
+拿JAVA项目为例
+
+
+使用MVN镜像下载源码并打包项目
+使用jdk镜像，从上面的MVN镜像中复制jar包并启动
+
+12345678910111213141516171819202122232425FROM maven:3.6.3-openjdk-8 AS builder #  AS builder 起别名RUN mkdir /build# 创建临时文件ADD src /build/src#将 src目录复制到临时目录ADD pom.xml /build# 将 pom文件复制到临时目录RUN cd /build &amp;&amp; mvn -B -ntp package# 打包FROM adoptopenjdk/openjdk8:alpine-jre# 获取jreCOPY --from=builder /build/target/ems-0.0.1-SNAPSHOT.jar /ems.jar#从标记点 拷贝jar包 并改名CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/ems.jar&qu ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/ops/supervisor%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/')"><div class="post_cover left"><a href="/2024/04/01/ops/supervisor%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" title="supervisor" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=9ff81c39-b977-7b79-5f06-559bc8db157c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="supervisor" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><a class="unvisited-post" href="/2024/04/01/ops/supervisor%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" title="supervisor">未读</a></div><a class="article-title" href="/2024/04/01/ops/supervisor%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" title="supervisor">supervisor</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T02:52:35.000Z" title="Created 2024-04-01 10:52:35" time="2024-04-01 10:52:35">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-01T05:29:31.491Z" title="Updated 2024-04-01 13:29:31" time="2024-04-01 13:29:31">2024-04-01</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/ops/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>ops</span></a></span></div><div class="content">进程管理工具
+
+
+说明
+Supervisor类似systemctl，是一个进程管理工具，进程异常可自动重启进程
+优点：易于维护，写法简单，可提供web页面管理进程，无需写守护脚本
+缺点：依赖python环境
+注意： 管理的进程必须要以前台模式运行
+
+安装1. 安装Supervisor
+方法一、yum安装
+
+1yum install supervisor
+
+
+方法二、pip安装
+
+1pip install supervisor
+
+2.生成主配置文件1echo_supervisord_conf &gt; /etc/supervisord.conf
+
+
+无特殊需求使用默认主配置文件即可
+
+3.启动Supervisor1supervisorctl -c /etc/supervisord.conf
+
+4.配置开机启动1systemctl enable supervisord.service
+
+
+
+配置
+为服务编写supervisor配置文件，新建  xxx.ini 文件，内容如下
+
+12345678910111213141516[program:名称]		#服务名称，管理服务根据此名称进行管理， ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/ops/windows%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E4%B8%BA%E6%9C%8D%E5%8A%A1/')"><div class="post_cover left"><a href="/2024/04/01/ops/windows%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E4%B8%BA%E6%9C%8D%E5%8A%A1/" title="windows程序注册为服务" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=7ee216ad-bfc1-8449-792b-1bf39ae13feb" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="windows程序注册为服务" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><a class="unvisited-post" href="/2024/04/01/ops/windows%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E4%B8%BA%E6%9C%8D%E5%8A%A1/" title="windows程序注册为服务">未读</a></div><a class="article-title" href="/2024/04/01/ops/windows%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E4%B8%BA%E6%9C%8D%E5%8A%A1/" title="windows程序注册为服务">windows程序注册为服务</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T02:52:35.000Z" title="Created 2024-04-01 10:52:35" time="2024-04-01 10:52:35">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-01T05:29:57.509Z" title="Updated 2024-04-01 13:29:57" time="2024-04-01 13:29:57">2024-04-01</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/ops/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>ops</span></a></span></div><div class="content">将windows程序注册为服务进行管理
+
+使用工具：instsrv+srvany下载链接：https://pan.baidu.com/s/1gKu_WwVo-TeWXmrGAr9qjw 提取码：s1vm
+安装instsrv+srvany
+将instsrv.exe和srvany.exe拷贝到C:\WINDOWS\SysWOW64目录下
+
+使用方法1.注册服务（1）打开cmd
+（2）运行命令：instsrv xxxxxx C:\WINDOWS\SysWOW64\srvany.exe
+
+xxxxxx为自定义的服务名称
+
+2. 更改注册表
+打开注册表：（cmd中输入：regedit）	
+
+ctrl+F，搜索xxxxxx（xxxxxx为上一步注册的服务名）
+
+右击xxxxxx  选择  新建项， 名称为Parameters  (Parameters固定，不能修改)
+
+在新建项中右键新建以下值，类型选择 字符串值
+（1）Application 值 ：  EXE程序绝对路径，如 C:\dir\text.exe
+  (2)  AppDirectory 值： EXE程序所在文件夹路径如：C:\dir
+  ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/04/01/ops/%E6%90%AD%E5%BB%BAstmp%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/')"><div class="post_cover left"><a href="/2024/04/01/ops/%E6%90%AD%E5%BB%BAstmp%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="搭建 stmp 流媒体服务器" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pics3.baidu.com/feed/34fae6cd7b899e51222a4533c719303ec9950db8.jpeg?_r_=3738cf88-ef36-960b-f1c9-647374c6fd0d" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="搭建 stmp 流媒体服务器" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">OPS</div><a class="unvisited-post" href="/2024/04/01/ops/%E6%90%AD%E5%BB%BAstmp%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="搭建 stmp 流媒体服务器">未读</a></div><a class="article-title" href="/2024/04/01/ops/%E6%90%AD%E5%BB%BAstmp%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="搭建 stmp 流媒体服务器">搭建 stmp 流媒体服务器</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-alt" style="display:none"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-01T02:52:35.000Z" title="Created 2024-04-01 10:52:35" time="2024-04-01 10:52:35">2024-04-01</time><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; display:none"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-01T05:59:13.039Z" title="Updated 2024-04-01 13:59:13" time="2024-04-01 13:59:13">2024-04-01</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/ops/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>ops</span></a></span></div><div class="content">一、所需资源nginx源文件
+官网：https://nginx.org/download/
+
+nginx-rtmp-module-master 模块源文件
+下载地址：https://github.com/arut/nginx-rtmp-module
+
+二、配置步骤1.编译安装nginx及nginx-rtmp-module-master模块1./configure --prefix=/usr/local/nginx --add-module=/root/nginx-rtmp-module-master
+
+1make &amp;&amp; make install
+
+2.配置nginx配置文件
+配置文件末尾加
+1234567891011121314rtmp &#123;    server &#123;        listen 1935;        application live &#123;            live on;        &#125;        application hls &#123;            live on;            ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><div class="pagination_tips_next">下页</div><i style="font-weight: inherit; font-size: 1rem;" class="anzhiyufont anzhiyu-icon-chevron-right fa-fw"></i></a><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')" aria-label="toPage"><a id="toPageButton" onclick="anzhiyu.toPage()"><i class="anzhiyufont anzhiyu-icon-angles-right" style="font-weight: inherit; font-size: 1rem;"></i></a></div></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="anzhiyufont anzhiyu-icon-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OPS/"><span class="card-category-list-name">OPS</span><span class="card-category-list-count">10</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/"><span class="card-category-list-name">杂乱无章</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Macos/" style="font-size: 1.05rem;">Macos<sup>1</sup></a><a href="/tags/docker/" style="font-size: 1.05rem;">docker<sup>2</sup></a><a href="/tags/ops/" style="font-size: 1.05rem;">ops<sup>6</sup></a><a href="/tags/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/" style="font-size: 1.05rem;">杂乱无章<sup>1</sup></a><a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 1.05rem;">逆向<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">April 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="sky" target="_blank">sky</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">11</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Macos/" style="font-size: 0.88rem;">Macos<sup>1</sup></a><a href="/tags/docker/" style="font-size: 0.88rem;">docker<sup>2</sup></a><a href="/tags/ops/" style="font-size: 0.88rem;">ops<sup>6</sup></a><a href="/tags/%E6%9D%82%E4%B9%B1%E6%97%A0%E7%AB%A0/" style="font-size: 0.88rem;">杂乱无章<sup>1</sup></a><a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 0.88rem;">逆向<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 sky 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>if (typeof gsap === "object") {
+  getScript("/js/anzhiyu/people.js", {defer:true})
+} else {
+  getScript("https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js").then(()=>{
+    getScript("/js/anzhiyu/people.js", {defer:true})
+  });
+}</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
