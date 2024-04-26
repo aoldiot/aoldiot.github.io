@@ -4,11 +4,36 @@
   
     
     <entry>
-      <title>一、node-red 搭建</title>
-      <link href="/2024/04/25/node-red/%E4%B8%80%E3%80%81node-red%20%E6%90%AD%E5%BB%BA/"/>
-      <url>/2024/04/25/node-red/%E4%B8%80%E3%80%81node-red%20%E6%90%AD%E5%BB%BA/</url>
+      <title>二.Modbus应用</title>
+      <link href="/2024/04/25/node-red/%E4%BA%8C.Mobbus%E8%AF%BB%E5%8F%96%E5%86%99%E5%85%A5/"/>
+      <url>/2024/04/25/node-red/%E4%BA%8C.Mobbus%E8%AF%BB%E5%8F%96%E5%86%99%E5%85%A5/</url>
       
-        <content type="html"><![CDATA[<h3 id="一、所需资源"><a href="#一、所需资源" class="headerlink" title="一、所需资源"></a>一、所需资源</h3>]]></content>
+        <content type="html"><![CDATA[<h1 id="测试准备"><a href="#测试准备" class="headerlink" title="测试准备"></a>测试准备</h1><blockquote><p>Tcp 服务端建立</p></blockquote><ul><li><p>软件推荐使用： <a href="https://qsaker.gitee.io/qsak/">xTools</a> （支持macos、Windows等）</p></li><li><p>根据下图创建modbus-tcp的服务端<br><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140944196242.jpg"><br>本人modbus—tcp服务端IP地址：10.21.2.171</p></li></ul><blockquote><p>node-red 安装<code>node-red-contrib-modbus</code>插件</p></blockquote><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140939786707.jpg"></p><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140940112951.jpg"></p><h1 id="modbus读寄存器"><a href="#modbus读寄存器" class="headerlink" title="modbus读寄存器"></a>modbus读寄存器</h1><h2 id="03-读保持寄存器"><a href="#03-读保持寄存器" class="headerlink" title="03 读保持寄存器"></a>03 读保持寄存器</h2><blockquote><p>创建<code>Modbus-Read</code> 及 <code>Debug</code>节点</p></blockquote><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140946842843.jpg"></p><blockquote><p>配置<code>Modbus-Read</code>节点</p></blockquote><ul><li>server配置</li></ul><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140951803735.jpg"></p><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>Type</td><td>选择通讯方式，这里选TCP</td></tr><tr><td>Host</td><td>Tcp服务端IP地址</td></tr><tr><td>端口</td><td>默认502</td></tr><tr><td>Tcp Type</td><td>DEFAULT</td></tr></tbody></table><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140954031459.jpg"></p><p> sever配置没问题的话，节点状态会变为<code>connected</code>状态</p><ul><li>其他参数配置</li></ul><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140947843021.jpg"></p><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>Unit-ld</td><td>485地址</td></tr><tr><td>FC</td><td>选择Modbus 功能码</td></tr><tr><td>Address</td><td>寄存器地址，本人测试的是 00001 寄存器</td></tr><tr><td>Quantity</td><td>指定要读取或写入的寄存器或线圈的数量</td></tr><tr><td>Poll Rate</td><td>轮循时间</td></tr></tbody></table><blockquote><p>测试验证</p></blockquote><ul><li>修改保持寄存器的值（00001）</li></ul><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140956518787.jpg"></p><ul><li>测试数据读取</li></ul><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140954943868.jpg"></p><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140955196995.jpg"></p><p>打开调试模式，点击<code>Modbus Read</code> 节点后的小方块，执行一次</p><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140959076719.jpg"><br>可以看到已经读取到了寄存器数值</p><h1 id="Modbus写寄存器"><a href="#Modbus写寄存器" class="headerlink" title="Modbus写寄存器"></a>Modbus写寄存器</h1><h2 id="05-强置单线圈"><a href="#05-强置单线圈" class="headerlink" title="05 强置单线圈"></a>05 强置单线圈</h2><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140960634107.jpg"></p><ul><li>设置一个<code>inject</code> 节点，并删除参数（用于手动执行流程）</li></ul><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140961238264.jpg"></p><ul><li>设置注入内容</li></ul><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140962728838.jpg"></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg.payload = 0;</span><br><span class="line">return msg;</span><br></pre></td></tr></table></figure><ul><li>配置<code>Modbus-Write</code>节点</li></ul><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140963052759.jpg"></p><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>Unit-ld</td><td>485地址</td></tr><tr><td>FC</td><td>选择Modbus 功能码</td></tr><tr><td>Address</td><td>寄存器地址，本人测试的是 00000 寄存器</td></tr><tr><td>server</td><td>Tcp服务端相关配置</td></tr></tbody></table><ul><li>验证</li></ul><p>手动更改 <code>00000</code>寄存器值为 <code>0001</code></p><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140966226410.jpg"></p><p>点击执行</p><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140967179223.jpg"></p><p><img src="http://img-bed-sky.oss-cn-beijing.aliyuncs.com/2024/04/26/17140967315282.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> node-red </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> iot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一.node-red 搭建</title>
+      <link href="/2024/04/25/node-red/%E4%B8%80.node-red%20%E6%90%AD%E5%BB%BA/"/>
+      <url>/2024/04/25/node-red/%E4%B8%80.node-red%20%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="docker部署"><a href="#docker部署" class="headerlink" title="docker部署"></a>docker部署</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red</span><br></pre></td></tr></table></figure><h1 id="npm安装"><a href="#npm安装" class="headerlink" title="npm安装"></a>npm安装</h1><blockquote><p>安装</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g --unsafe-perm node-red</span><br></pre></td></tr></table></figure><blockquote><p>启动</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-red</span><br></pre></td></tr></table></figure><blockquote><p>访问</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:1880/</span><br></pre></td></tr></table></figure><blockquote><p>常见问题</p></blockquote><ul><li>macos下需要用sudo权限</li><li>无法安装请更换淘宝源</li></ul>]]></content>
       
       
       <categories>
